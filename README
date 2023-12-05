@@ -1,1 +1,3 @@
-Repo that tests trufflehog github integration
+Repo that tests trufflehog github integration.
+
+Any secret in this repo are for testing purpose only and not used anywhere.
