@@ -26,8 +26,6 @@ if not target:
     raise FileNotFoundError("$GITHUB_WORKSPACE not set in current environment")
 
 binary_path = f"{script_directory}/trufflehog"
-os.chmod(binary_path, stat.S_IEXEC)
-
 
 scan_result = subprocess.run(
     [binary_path, "filesystem", "-j", "--fail", target],
