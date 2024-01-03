@@ -26,7 +26,7 @@ if not target:
 
 binary_path = f"{script_directory}/trufflehog"
 scan_result = subprocess.run(
-    [binary_path, "filesystem", "-j", "--fail", ],
+    [binary_path, "filesystem", "-j", "--fail", target],
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE,
     text=True,
