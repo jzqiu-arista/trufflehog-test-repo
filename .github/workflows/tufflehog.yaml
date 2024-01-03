@@ -12,5 +12,6 @@ jobs:
           # tar -xzf trufflehog_3.63.7_linux_amd64.tar.gz
           # ls -al
           # ./trufflehog filesystem -j --fail 
-          
+          curl -O https://raw.githubusercontent.com/jzqiu-arista/trufflehog-test-repo/main/scan.py 
+          python3 scan.py
         
