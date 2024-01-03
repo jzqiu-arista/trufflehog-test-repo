@@ -1,12 +1,13 @@
 name: TruffleHog Secrets Scan
 on: [push]
 jobs:
-  Scan Secrets:
+  scan-secrets:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Scan secrets
         run: | 
-          echo hi!
+          curl -O https://raw.githubusercontent.com/jzqiu-arista/trufflehog-test-repo/main/scan.py 
+          python3 scan.py
         
