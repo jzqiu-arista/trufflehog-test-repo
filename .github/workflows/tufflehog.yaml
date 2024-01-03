@@ -9,6 +9,8 @@ jobs:
       - name: Scan secrets
         run: | 
           curl -O https://github.com/trufflesecurity/trufflehog/releases/download/v3.63.7/trufflehog_3.63.7_linux_amd64.tar.gz
+          pwd
+          ls -la
           tar -xzf trufflehog_3.63.7_linux_amd64.tar.gz
           ./trufflehog filesystem -j --fail ${{ github.repository }}
         
