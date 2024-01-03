@@ -6,8 +6,8 @@ import json
 import requests
 
 TRUFFLEHOG_VERSION = "3.63.7"
-TRUFFLEHOG_ARCH = "arm64"
-TRUFFLEHOG_PLATFORM = "darwin"
+TRUFFLEHOG_ARCH = "amd64"
+TRUFFLEHOG_PLATFORM = "linux"
 
 TRUFFLEHOG_TAR_NAME = f"trufflehog_{TRUFFLEHOG_VERSION}_{TRUFFLEHOG_PLATFORM}_{TRUFFLEHOG_ARCH}.tar.gz"
 TRUFFLEHOG_URL = f"https://github.com/trufflesecurity/trufflehog/releases/download/v{TRUFFLEHOG_VERSION}/{TRUFFLEHOG_TAR_NAME}"
