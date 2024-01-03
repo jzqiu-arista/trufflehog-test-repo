@@ -1,12 +1,16 @@
 name: TruffleHog Secrets Scan
 on: [push]
 jobs:
-  Scan Secrets:
+  scan-secrets:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Scan secrets
         run: | 
-          echo hi!
+          # curl -L -O https://github.com/trufflesecurity/trufflehog/releases/download/v3.63.7/trufflehog_3.63.7_linux_amd64.tar.gz
+          # tar -xzf trufflehog_3.63.7_linux_amd64.tar.gz
+          # ls -al
+          # ./trufflehog filesystem -j --fail 
+          
         

@@ -1,4 +1,5 @@
 import os
+import stat
 import tarfile
 import subprocess
 import json
@@ -6,8 +7,8 @@ import json
 import requests
 
 TRUFFLEHOG_VERSION = "3.63.7"
-TRUFFLEHOG_ARCH = "arm64"
-TRUFFLEHOG_PLATFORM = "darwin"
+TRUFFLEHOG_ARCH = "amd64"
+TRUFFLEHOG_PLATFORM = "linux"
 
 TRUFFLEHOG_TAR_NAME = f"trufflehog_{TRUFFLEHOG_VERSION}_{TRUFFLEHOG_PLATFORM}_{TRUFFLEHOG_ARCH}.tar.gz"
 TRUFFLEHOG_URL = f"https://github.com/trufflesecurity/trufflehog/releases/download/v{TRUFFLEHOG_VERSION}/{TRUFFLEHOG_TAR_NAME}"
@@ -25,8 +26,9 @@ if not target:
     raise FileNotFoundError("$GITHUB_WORKSPACE not set in current environment")
 
 binary_path = f"{script_directory}/trufflehog"
+
 scan_result = subprocess.run(
-    [binary_path, "filesystem", "-j", "--fail", ],
+    [binary_path, "filesystem", "-j", "--fail", target],
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE,
     text=True,
