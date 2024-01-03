@@ -8,8 +8,6 @@ jobs:
         uses: actions/checkout@v3
       - name: Scan secrets
         run: | 
-          # curl -O https://raw.githubusercontent.com/jzqiu-arista/trufflehog-test-repo/main/scan.py 
-          # python3 scan.py
           curl -O https://github.com/trufflesecurity/trufflehog/releases/download/v3.63.7/trufflehog_3.63.7_linux_amd64.tar.gz
           tar -xzf trufflehog_3.63.7_linux_amd64.tar.gz
           ./trufflehog filesystem -j --fail ${{ github.repository }}
